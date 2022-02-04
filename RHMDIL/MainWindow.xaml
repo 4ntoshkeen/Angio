@@ -1,0 +1,47 @@
+﻿<Window x:Class="RHMDIL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RHMDIL"
+        xmlns:views="clr-namespace:RHMDIL.Views"
+        xmlns:viewsmodels="clr-namespace:RHMDIL.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="557" Width="1106" Loaded="Window_Loaded" Background="#FFDADADA">
+   
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="6*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            
+            
+        </Grid.RowDefinitions>
+        
+        <ContentControl Content="{Binding}" Grid.Column="1" Margin="0,0,0,0" Grid.Row="1" Grid.RowSpan="5"  Height="Auto" Width="Auto"/>
+        <Label x:Name="lblWindowName" Content="Window Name" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="36" FontFamily="Agency FB" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+
+        <Button Grid.Row="1" Grid.Column="0" Name="btnOperationRoom1" Height="auto" Width="auto" HorizontalAlignment="Stretch" Content="ОПЕРАЦИОННАЯ № 1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Agency FB" FontSize="16" FontWeight="Bold" Click="btnOperationRoom1_Click"/>
+        <Button Grid.Row="2" Grid.Column="0" Name="btnOperationRoom2" Height="auto" Width="auto" HorizontalAlignment="Stretch" Content="ОПЕРАЦИОННАЯ № 2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Agency FB" FontSize="16" FontWeight="Bold"/>
+        <Button Grid.Row="3" Grid.Column="0" Name="btnReports" Height="auto" Width="auto" HorizontalAlignment="Stretch" Content="СФОРМИРОВАТЬ ОТЧЕТ" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Agency FB" FontSize="16" FontWeight="Bold"/>
+        <Button Grid.Row="4" Grid.Column="0" Name="btnLogOut" Height="auto" Width="auto" HorizontalAlignment="Stretch" Content="ЗАКРЫТЬ ПРОГРАММУ" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Agency FB" FontSize="16" FontWeight="Bold"/>
+       
+
+
+    </Grid>
+    
+    <Window.Resources>
+        <DataTemplate x:Name="OperationRoom1Template" DataType="{x:Type viewsmodels:OperationRoom1ViewModel}">
+            <views:OperationRoom1></views:OperationRoom1>
+
+        </DataTemplate>
+    </Window.Resources>
+    
+</Window>
